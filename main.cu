@@ -28,7 +28,7 @@
 #endif
 
 #ifndef BLOCK_SIZE
-#define BLOCK_SIZE 256ULL
+#define BLOCK_SIZE 1024ULL
 #endif
 
 #ifndef GPU_COUNT
