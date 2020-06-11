@@ -97,7 +97,7 @@ namespace java_random {
 
 }
 
-__global__ __launch_bounds__(256, 2) void crack(uint64_t seed_offset, int32_t *num_seeds, uint64_t *seeds) {
+__global__ __launch_bounds__(BLOCK_SIZE, 2) void crack(uint64_t seed_offset, int32_t *num_seeds, uint64_t *seeds) {
     uint64_t originalSeed = ((blockIdx.x * blockDim.x + threadIdx.x + seed_offset) << 4ULL) | CHUNK_SEED_BOTTOM_4;
     uint64_t seed = originalSeed;
 
